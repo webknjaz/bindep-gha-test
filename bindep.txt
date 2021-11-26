@@ -1,2 +1,2 @@
-pypy [platform:ubuntu pypy]
+pypy [platform:ubuntu]
 pypy-dev [platform:ubuntu pypy]
