@@ -27,3 +27,16 @@ jobs:
 
       # Runs a single command using the runners shell
       - uses: re-actors/bindep@main
+
+  discovery:
+    strategy:
+      matrix:
+        vm:
+        - macos-13  # x86
+        - macos-14  # ARM
+        - ubuntu-latest
+        - windows-latest
+    runs-on: ${{ matrix.vm }}
+    steps:
+    - name: Discover bindep profiles under ${{ matrix.vm }}
+      run: pipx run bindep --profiles
